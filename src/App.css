@@ -1,38 +1,216 @@
-.App {
+:root {
+  --color-text: rgb(36, 36, 36);
+  --color-pink: #FFD6FF;
+  --color-pink-purple: #E7C6FF;
+  --color-purple: #C8B6FF;
+  --color-purple-blue: #B8C0FF;
+  --color-blue: #BBD0FF;
+  --color-white: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+  scroll-behavior: smooth;
+  color: var(--color-text);
+}
+
+/*
+  Header
+*/
+
+.header-daylight {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  background-color: transparent;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+}
+
+.header-daylight > nav {
+  display: grid;
+}
+
+.header-daylight > nav > ul {
+  display: flex;
+}
+
+.header-daylight > nav > ul > li {
+  list-style: none;
+  padding: 0 10px;
+}
+
+.header-daylight > nav > ul > li > a{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding: 5px 10px;
+}
+
+/*
+  Home
+*/
+
+.home-daylight {
+  padding: 80px 0 0 0;
+  height: 100vh;
+  background: linear-gradient(to left top, rgb(249, 168, 212), rgb(216, 180, 254), rgb(129, 140, 248));
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.home-daylight > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-daylight > section > p {
+  font-size: 1.5em;
+}
+
+.home-daylight > section > h1 {
+  font-size: 5vw;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+.home-daylight > picture {
+  width: 35vw;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-daylight > picture > img {
+  width: 100%;
+}
+
+/*
+  Projects
+*/
+
+.projects-daylight {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 80px 0 0 0;
+  align-content: center;
+  background-color: var(--color-white);
+  background-image: url("../public/first-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.projects-daylight > .project {
+  width: 100%;
+  padding: 30px;
+}
+
+.projects-daylight > .project > h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  padding: 0 0 10px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.projects-daylight > .project > p {
+  font-size: 1.2em;
+  text-align: justify;
+  line-height: 30px;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.projects-daylight > .project > .container-image-project {
+  width: 550px;
+  height: 280px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.projects-daylight > .project > .container-image-project > a > img {
+  width: 100%;
+  filter: grayscale(100);
+  transition: 200ms ease-out;
+}
+
+.projects-daylight > .project > .container-image-project > a > img:hover {
+  transform: scale(1.09, 1.09);
+  filter: grayscale(0);
+}
+
+.projects-daylight > .project > .container-link-extra {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.projects-daylight > .project > .container-link-extra >.link-extra {
+  font-size: 1.2em;
+  font-weight: 700;
+  transition: 200ms ease-in;
+}
+
+.projects-daylight > .project > .container-link-extra >.link-extra:hover {
+  color: var(--color-pink-purple);
+  background-color: var(--color-text);
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
+/*
+  State manipulation
+*/
+
+.hover-active {
+  -moz-box-shadow: -2px 16px 15px -4px rgba(36,36,36,0.49);
+  -webkit-box-shadow: -2px 16px 15px -4px rgba(36,36,36,0.49);
+  box-shadow: -2px 16px 15px -4px rgba(36,36,36,0.49);
+}
+
+header.scroll-active-header {
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5.5px);
+  backdrop-filter: blur(8.6px);
+  transition: 300ms ease-out;
+}
+
+header.scroll-active-header > nav > ul > li > a {
+  color: var(--color-text);
+  transition: 400ms;
+}
+
+header.scroll-active-header > nav > ul > li > a:hover {
+  background-color: var(--color-text);
+  color: var(--color-pink);
+  border-radius: 2px;
+}
+
+/*
+  + 4K screens
+*/
+
+@media screen and (min-width: 1441px){
+  /*
+    Home
+  */
+
+  .home-daylight {
+    height: 50vh;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .home-daylight > section > h1 {
+    font-size: 4em;
   }
-  to {
-    transform: rotate(360deg);
+  .home-daylight > picture {
+    width: 100%;
   }
 }
