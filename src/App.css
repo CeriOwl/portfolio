@@ -61,10 +61,13 @@
 .home-daylight {
   padding: 80px 0 0 0;
   height: 100vh;
-  background: linear-gradient(to left top, rgb(249, 168, 212), rgb(216, 180, 254), rgb(129, 140, 248));
   display: grid;
   grid-template-columns: 60% 40%;
+  background-image: linear-gradient(to right, rgb(249, 168, 212), rgb(216, 180, 254), rgb(129, 140, 248));
+  background-size: 500%;
+  animation: rotateBackground 3s infinite alternate;
 }
+
 .home-daylight > section {
   display: flex;
   flex-direction: column;
@@ -91,6 +94,15 @@
 
 .home-daylight > picture > img {
   width: 100%;
+}
+
+@keyframes rotateBackground {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
 }
 
 /*
@@ -141,6 +153,8 @@
   width: 100%;
   filter: grayscale(100);
   transition: 200ms ease-out;
+  position: sticky;
+  z-index: 0;
 }
 
 .projects-daylight > .project > .container-image-project > a > img:hover {
@@ -167,6 +181,191 @@
 }
 
 /*
+  About
+*/
+
+.about {
+  background-color: var(--color-white);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 80px 0 0 0;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  background-image: url("../public/second-pattern.svg");
+}
+
+.about > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.about > div:first-child > picture {
+  width: 400px;
+  display: inline-block;
+}
+
+.about > div:first-child > picture > img {
+  width: 100%;
+  animation: borderImage 3s infinite alternate;
+  border-radius: 50%;
+}
+
+.about > div:first-child > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.about > div:first-child > div > a > .icon {
+  font-size: 30px;
+}
+
+.about > div:last-child {
+  padding: 30px;
+  background-color: #f2f2f2ce;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.about > div:last-child > p {
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+
+@keyframes borderImage {
+  0% {
+    border: 5px solid var(--color-blue);
+  }
+  25% {
+    border: 5px solid var(--color-purple-blue);
+  }
+  50% {
+    border: 5px solid var(--color-purple);
+  }
+  75% {
+    border: 5px solid var(--color-pink-purple);
+  }
+  100% {
+    border: 5px solid var(--color-pink);
+  }
+}
+
+/*
+  Contact
+*/
+
+.contact {
+  height: 100vh;
+  padding: 80px 0 0 0;
+  display: grid;
+  background-color: var(--color-white);
+  background-image: url(../public/third-pattern.svg);
+}
+
+.contact > div {
+  place-self: center;
+  background-color: #f2f2f2ce;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.contact > div > h2 {
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.contact > div > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact > div > form > .container-email-name {
+  display: flex;
+}
+
+.contact > div > form > .container-email-name > div {
+  padding: 10px;
+}
+
+.contact > div > form > .container-email-name > div > label {
+  padding: 0 10px 0 0;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.contact > div > form > .container-email-name > div > input {
+  font-size: 20px;
+  padding: 5px;
+  border: 0;
+  border-radius: 2px;
+}
+
+.contact > div > form > .container-message {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.contact > div > form > .container-message > label {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 0 0 10px 0;
+}
+
+.contact > div > form > .container-message > textarea {
+  padding: 5px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 2px;
+}
+
+.contact > div > form > .container-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  padding: 10px;
+}
+
+.contact > div > form > .container-buttons > button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact > div > form > .container-buttons > button:first-child {
+  background-color: var(--color-blue);
+  transition: 300ms ease-in;
+}
+
+.contact > div > form > .container-buttons > button:first-child:hover {
+  background-color: #B8C0FF;
+}
+
+.contact > div > form > .container-buttons > button:last-child {
+  background-color: var(--color-pink);
+  transition: 300ms ease-in-out;
+}
+
+.contact > div > form > .container-buttons > button:last-child:hover {
+  background-color: #E7C6FF;
+}
+
+/*
   State manipulation
 */
 
@@ -182,6 +381,7 @@ header.scroll-active-header {
   -webkit-backdrop-filter: blur(5.5px);
   backdrop-filter: blur(8.6px);
   transition: 300ms ease-out;
+  z-index: 1;
 }
 
 header.scroll-active-header > nav > ul > li > a {

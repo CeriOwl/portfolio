@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Header props={menuStatus}/>
-      <Main></Main>
+      <Main />
     </div>
   );
 }
