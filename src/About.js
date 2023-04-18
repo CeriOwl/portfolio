@@ -1,6 +1,5 @@
 import React from 'react'
 import { BsTwitter, BsLinkedin, BsGithub, BsSpotify } from "react-icons/bs";
-import { IconContext } from "react-icons"
 const public_url = process.env.PUBLIC_URL;
 
 export default function About() {
@@ -11,10 +10,9 @@ export default function About() {
             <img src={public_url + "personal_photo.jpg"} alt="It's me, using a black shirt and in the background is the pet of github with different customes" />
           </picture>
           <div>
-            <a href='#'><BsLinkedin className='icon' values={{color: "blue"}}/></a>
-            <a href='#'><BsGithub className='icon' /></a>
-            <a href='#'><BsTwitter className='icon' /></a>
-            <a href='#'><BsSpotify className='icon' /></a>
+            <a href='https://www.linkedin.com/in/alejandro-camacho-olivares-a66038227/' title='Linkedin'><BsLinkedin className='icon' values={{color: "blue"}}/></a>
+            <a href='https://github.com/CeriOwl' title='GitHub'><BsGithub className='icon' /></a>
+            <a href='https://open.spotify.com/playlist/3NeNf51W6fxPO2umH1gRcp?si=13a2f0c95c7c4104' title='Spotify'><BsSpotify className='icon' /></a>
           </div>
         </div>
         <div>
