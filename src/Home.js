@@ -8,7 +8,7 @@ export default function Home() {
         <h1>Frontend Developer Jr</h1>
       </section>
       <picture>
-        <img src={public_url + "first-image.png"}  alt=" "/>
+        <img src={public_url + "/first-image.png"}  alt=" "/>
       </picture>
     </section>
   )
