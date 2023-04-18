@@ -5,7 +5,7 @@ const projects = [
     {
         name: "Ableton Copy Website",
         description: "A simple copy of a page of the Ableton website, it's the more similar way I could do it. Feel free to compare the two websites.",
-        img: "first-project.jpeg",
+        img: "/first-project.jpeg",
         url: "https://ceriowl.github.io/AbletonPractice/",
         extra: {
             another_website: "https://www.ableton.com/en/about/"
@@ -14,7 +14,7 @@ const projects = [
     {
         name: "Anime Search",
         description: "It's a website where you can search information of any manga or anime that you want. Was made using HTML, CSS and Javascript.",
-        img: "second-project.jpeg",
+        img: "/second-project.jpeg",
         url: "https://ceriowl.github.io/anime-manga-searching.github.io/",
         extra: ""
     }

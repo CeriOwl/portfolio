@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsTwitter, BsLinkedin, BsGithub, BsSpotify } from "react-icons/bs";
+import { BsLinkedin, BsGithub, BsSpotify } from "react-icons/bs";
 const public_url = process.env.PUBLIC_URL;
 
 export default function About() {
@@ -7,7 +7,7 @@ export default function About() {
     <section className='about' id='about'>
         <div> 
           <picture>
-            <img src={public_url + "personal_photo.jpg"} alt="It's me, using a black shirt and in the background is the pet of github with different customes" />
+            <img src={public_url + "/personal_photo.jpg"} alt="It's me, using a black shirt and in the background is the pet of github with different customes" />
           </picture>
           <div>
             <a href='https://www.linkedin.com/in/alejandro-camacho-olivares-a66038227/' title='Linkedin'><BsLinkedin className='icon' values={{color: "blue"}}/></a>
