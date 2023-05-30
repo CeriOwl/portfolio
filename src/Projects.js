@@ -17,6 +17,15 @@ const projects = [
         img: "/second-project.jpeg",
         url: "https://ceriowl.github.io/anime-manga-searching.github.io/",
         extra: ""
+    },
+    {
+        name: "Monstercat Copy Website",
+        description: "A copy of a webpage of Monstercat made in ReactJs connected to the Spotify API to include the option to search new albums to change the web with the album selected. Feel free to try that new option in the web.",
+        img: "/third-project.jpeg",
+        url: "https://monstercat-copy.vercel.app/",
+        extra: {
+            another_website: "https://www.monstercat.com/release/MCLP017"
+        }
     }
 ]
 

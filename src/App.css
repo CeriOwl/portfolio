@@ -110,7 +110,6 @@
 */
 
 .projects-daylight {
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 80px 0 0 0;
